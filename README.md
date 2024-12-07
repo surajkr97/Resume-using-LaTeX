@@ -110,7 +110,7 @@ This repository contains the LaTeX source code for my professional resume, desig
 
 ## 🖼 Preview
 
-![Resume Screenshot](https://drive.google.com/file/d/1_VnAXFsJnfc26dlYP4KOlTNX7EKHqi3L/view?usp=sharing)
+<img src="Resume Preview.png" width="300">
 
 ---
 
