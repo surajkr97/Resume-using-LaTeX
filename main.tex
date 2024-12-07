@@ -1,0 +1,290 @@
+\documentclass[letterpaper,10pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN_FILE: mteck.sty
+%% NOTE: Everything between here and END_FILE can
+%% be relocated to "mteck.sty" and then included with:
+%\usepackage{mteck}
+
+% Dependencies
+% NOTE: Some packages (lastpage, hyperref) require second build!
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{lastpage}
+
+% Sans-Serif
+%\usepackage[sfdefault]{FiraSans}
+%\usepackage[sfdefault]{roboto}
+%\usepackage[sfdefault]{noto-sans}
+%\usepackage[default]{sourcesanspro}
+
+% Serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+% Colors
+% Use with \color{Name}
+% Can wrap entire heading with {\color{accent} [...] }
+\usepackage{xcolor}
+\definecolor{accentTitle}{HTML}{0e6e55}
+\definecolor{accentText}{HTML}{0e6e55}
+\definecolor{accentLine}{HTML}{a16f0b}
+
+% Misc. Options
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+
+% Adjust Margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{3.7pt}
+\raggedbottom
+\raggedright
+
+% ATS Readability
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+%-----------------%
+% Custom Commands %
+%-----------------%
+
+% Centered title along with subtitle between HR
+% Usage: \documentTitle{Name}{Details}
+\newcommand{\documentTitle}[2]{
+  \begin{center}
+    {\Huge\color{accentTitle} #1}
+    \vspace{10pt}
+    {\color{accentLine} \hrule}
+    \vspace{2pt}
+    %{\footnotesize\color{accentTitle} #2}
+    \footnotesize{#2}
+    \vspace{2pt}
+    {\color{accentLine} \hrule}
+  \end{center}
+}
+
+% Create a footer with correct padding
+% Usage: \documentFooter{\thepage of X}
+\newcommand{\documentFooter}[1]{
+  \setlength{\footskip}{10.25pt}
+  \fancyfoot[C]{\footnotesize #1}
+}
+
+% Simple wrapper to set up page numbering
+% Usage: \numberedPages
+% WARNING: Must run pdflatex twice!
+\newcommand{\numberedPages}{
+  \documentFooter{\thepage/\pageref{LastPage}}
+}
+
+% Section heading with horizontal rule
+% Usage: \section{Title}
+\titleformat{\section}{
+  \vspace{-5pt}
+  \color{accentText}
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{accentLine}\titlerule]
+
+% Section heading with separator and content on same line
+% Usage: \tinysection{Title}
+\newcommand{\tinysection}[1]{
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+}
+
+% Indented line with arguments left/right aligned in document
+% Usage: \heading{Left}{Right}
+\newcommand{\heading}[2]{
+  \hspace{10pt}#1\hfill#2\\
+}
+
+% Adds \textbf to \heading
+\newcommand{\headingBf}[2]{
+  \heading{\textbf{#1}}{\textbf{#2}}
+}
+
+% Adds \textit to \heading
+\newcommand{\headingIt}[2]{
+  \heading{\textit{#1}}{\textit{#2}}
+}
+
+% Template for itemized lists
+% Usage: \begin{resume_list} [items] \end{resume_list}
+\newenvironment{resume_list}{
+  \vspace{-7pt}
+  \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
+}{
+  \end{itemize}
+  %\vspace{-2pt}
+}
+
+% Formats an item to use as an itemized title
+% Usage: \itemTitle{Title}
+\newcommand{\itemTitle}[1]{
+  \item[] \underline{#1}\vspace{4pt}
+}
+
+% Bullets used in itemized lists
+\renewcommand\labelitemi{--}
+
+%% END_FILE: mteck.sty
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+%===================%
+% Suraj's Resume %
+%===================%
+
+%\numberedPages % NOTE: lastpage requires a second build
+%\documentFooter{\thepage of 2} % Does similar without using lastpage
+\begin{document}
+
+  %---------%
+  % Heading %
+  %---------%
+\documentTitle{Suraj Kumar}{
+    % Web Version
+    %\raisebox{-0.05\height} \faPhone\ [redacted - web copy] ~
+    %\raisebox{-0.15\height} \faEnvelope\ [redacted - web copy] ~
+    %%
+    \href{tel:+917367089724}{
+      \raisebox{-0.05\height}{\faPhone} +91 7367089724} ~ | ~
+    \href{mailto:surajkumar06174@gmail.com}{
+      \raisebox{-0.15\height}{\faEnvelope} surajkumar06174@gmail.com} ~ | ~
+    \href{https://linkedin.com/in/suraj-gupta-679815215}{
+      \raisebox{-0.15\height}{\faLinkedin} linkedin.com/in/suraj-gupta-679815215} ~ | ~
+    \href{https://github.com/surajkr97}{
+      \raisebox{-0.15\height}{\faGithub} github.com/surajkr97}
+}
+
+  %---------%
+  % Profile %
+  %---------%
+
+  % \tinysection{Profile}
+  % Enthusiastic engineering graduate skilled in coding, UI design, and eager to build impactful digital solutions.
+
+  %--------%
+  % Skills %
+  %--------%
+
+  \section{Skills}
+
+    \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=100pt]
+      \item[\textbf{Coding Languages}] Html, Css, Js, React, C
+      \item[\textbf{Developer Tools}] Vs Code, GitHub
+      \item[\textbf{Technologies}] Figma, Linux, Flutter, Arduino
+    \end{itemize}
+
+
+  %------------%
+  % Projects %
+  %------------%
+
+  \section{Projects}
+    \headingBf {\underline{\href{https://shivamsecurities.com/}{Investment Services \(\nearrow\)}}}{September 2023}
+    \begin{resume_list}
+    \item Designed and developed a fully functional, responsive website independently, incorporating modern UI/UX principles.
+    \item Integrated essential features, including policy pages, refund details, and a secure payment gateway.
+    \item Ensured seamless navigation and user experience through HTML, CSS, JavaScript, and backend integration.
+    \end{resume_list} 
+    
+    \headingBf {\underline{\href{https://github.com/surajkr97/MemoryGame/tree/master/matchthecards}{Memory Game \(\nearrow\)}}}{May 2023}
+    \begin{resume_list}
+    \item Built an interactive memory game using React, with a card-matching mechanism and a 21-flip challenge.
+    \item Designed and implemented game logic, flipping animations, and a responsive interface for an engaging user experience.
+    \item Leveraged React's component-based architecture for efficient state management and dynamic UI updates.
+    \end{resume_list}
+    
+    \headingBf {\underline{\href{https://github.com/surajkr97/Expense-Tracker-App}{Expense Tracker App \(\nearrow\)}}}{March 2023}
+    \begin{resume_list}
+    \item Developed an expense tracker app using Flutter and Dart, allowing users to track and manage their daily expenses.
+    \item Designed a user-friendly interface with features for adding, editing, and categorizing expenses.
+    \item Implemented data storage solutions to save and retrieve expense data, ensuring smooth performance and easy tracking.
+  \end{resume_list}
+
+    \headingBf {\underline{\href{https://surajkr97.hashnode.dev/exploring-the-world-of-iot-from-robo-cars-to-robo-warrior?source=more_articles_bottom_blogs}{Hand Gesture Controlled Robot Car \(\nearrow\)}}}{July 2022}
+    \begin{resume_list}
+    \item Developed an IoT-based hand gesture-controlled robot car using Arduino and a gyroscope sensor for motion detection.
+    \item Integrated Bluetooth technology to transmit hand gesture data to the robot car, enabling movement based on gestures (forward, backward, left, right).
+    \item Designed a wearable system (bracelet) with a gyroscope sensor to capture and send data for precise control of the robot car.
+  \end{resume_list}
+
+  %------------%
+  % Internship and Training %
+  %------------%
+
+  \section{Internship and Training}
+
+  \headingBf{
+Web Designer at Shivam Securities Private Limited, Dehradun}{May 2023 -- August 2024}
+  \begin{resume_list}
+    \item \textbf{Developed Shivam Securities Website:} Designed and built a responsive website, including policy pages, refund details, and investment resources.
+    \item \textbf{Integrated Payment Gateway:} Successfully added a secure payment gateway independently.
+    \item \textbf{Optimized User Experience:} Ensured smooth functionality and user-friendly navigation.
+    \item \textbf{Full-Stack Development:} Handled both backend and frontend tasks to align with business goals.
+  \end{resume_list}
+
+  \headingBf{Frontend Developer at Cosmos Next Gen Tech Private Limited, Bangalore}{October 2021 -- March 2022}
+  \begin{resume_list}
+    \item \textbf{Basic Styling and Layouts:} Assisted in creating responsive web pages using HTML, CSS, and JavaScript.
+    \item \textbf{UI Design with Figma:} Contributed to designing user interfaces and prototypes in Figma to improve visual appeal and usability.
+    \item \textbf{Collaborated with Senior Developers:} Worked closely with experienced team members to learn and implement best practices in frontend development.
+  \end{resume_list}
+
+  %-----------%
+  % Education %
+  %-----------%
+
+  \section{Education}
+
+  \headingBf{Uttrakhand Technical University}{August 2020 — May 2024} % Note: Adding year(s) exposes an implied age
+  \headingIt{Computer Science and Engineering}{Sudhowala, Dehradun}
+
+ % \vspace{5pt}
+ %  \headingBf{Higher Secondary Education}{June 2020 — March 2024} % Note: Adding year(s) exposes an implied age
+ %  \headingIt{M.R.R.G. College, Bettiah}{}
+
+  %----------------------------%
+  % Extracurricular Activities %
+  %----------------------------%
+
+  \section{Achievements}
+
+  % \headingBf{Hospital / Health Science IRB}{Mar 2015 -- Present}
+  % \begin{resume_list}
+  %   \item Served as non-scientific/unaffiliated patient-representative
+  %   \item Reviewed patient consent forms for completeness, accuracy, and clarity
+  %   \item Became familiar with industry standards and regulations (OHRP, HIPAA)
+  % \end{resume_list}
+
+  % \headingBf{Debian Linux}{Jan 2001 -- Present}
+  \begin{resume_list}
+  \vspace{5pt}
+    \item First runner-up in \textbf{Incubate india hackathon 2021 powered by Git Hub} held in Tula's Institute where we built a online virus
+tracker named as ScanIT
+  \vspace{5pt}
+    \item First runner-up in \textbf{Inter college Tech Talent Hackathon 2023} which held in Haryana where we developed a
+memory game
+    % \item Resolved bugs reported in bug tracking system
+  \end{resume_list}
+
+\end{document}
