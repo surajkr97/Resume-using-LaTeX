@@ -43,6 +43,8 @@
 \renewcommand{\footrulewidth}{0pt}
 \urlstyle{same}
 
+\linespread{1.13} % Adjust line spacing slightly
+
 % Adjust Margins
 \addtolength{\oddsidemargin}{-0.7in}
 \addtolength{\evensidemargin}{-0.5in}
@@ -73,7 +75,6 @@
     \vspace{10pt}
     {\color{accentLine} \hrule}
     \vspace{2pt}
-    %{\footnotesize\color{accentTitle} #2}
     \footnotesize{#2}
     \vspace{2pt}
     {\color{accentLine} \hrule}
@@ -133,7 +134,6 @@
   \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
 }{
   \end{itemize}
-  %\vspace{-2pt}
 }
 
 % Formats an item to use as an itemized title
@@ -142,8 +142,8 @@
   \item[] \underline{#1}\vspace{4pt}
 }
 
-% Bullets used in itemized lists
-\renewcommand\labelitemi{--}
+% Change bullets to default bullet points
+\renewcommand\labelitemi{$\bullet$}
 
 %% END_FILE: mteck.sty
 %%%%%%%%%%%%%%%%%%%%%%
@@ -161,93 +161,86 @@
   % Heading %
   %---------%
 \documentTitle{Suraj Kumar}{
-    % Web Version
-    %\raisebox{-0.05\height} \faPhone\ [redacted - web copy] ~
-    %\raisebox{-0.15\height} \faEnvelope\ [redacted - web copy] ~
-    %%
     \href{tel:+917367089724}{
       \raisebox{-0.05\height}{\faPhone} +91 7367089724} ~ | ~
     \href{mailto:surajkumar06174@gmail.com}{
       \raisebox{-0.15\height}{\faEnvelope} surajkumar06174@gmail.com} ~ | ~
     \href{https://linkedin.com/in/suraj-gupta-679815215}{
-      \raisebox{-0.15\height}{\faLinkedin} linkedin.com/in/suraj-gupta-679815215} ~ | ~
+      \raisebox{-0.15\height}{\faLinkedin} https://www.linkedin.com/in/suraj-kumar-679815215} ~ | ~
     \href{https://github.com/surajkr97}{
       \raisebox{-0.15\height}{\faGithub} github.com/surajkr97}
 }
 
-  %---------%
-  % Profile %
-  %---------%
-
-  % \tinysection{Profile}
-  % Enthusiastic engineering graduate skilled in coding, UI design, and eager to build impactful digital solutions.
+  %-------------------%
+  % Professional Summary %
+  %-------------------%
+  \section{Professional Summary}
+  Frontend Developer with over 2 years of experience in building scalable, responsive web applications using React.js and modern UI/UX principles. Skilled in developing user-centric designs, optimizing website performance, and integrating secure payment gateways. Proven ability to collaborate with global teams and deliver solutions aligned with business goals. Open to remote opportunities with time zone flexibility.
 
   %--------%
   % Skills %
   %--------%
 
-  \section{Skills}
+    \section{Skills}
 
-    \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=100pt]
-      \item[\textbf{Coding Languages}] Html, Css, Js, React, C
-      \item[\textbf{Developer Tools}] Vs Code, GitHub
-      \item[\textbf{Technologies}] Figma, Linux, Flutter, Arduino
+  \begin{multicols}{2}
+    \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=120pt]
+      \item[\textbf{Frontend Development}] HTML, CSS, JavaScript, React.js
+      \item[\textbf{UI/UX Design Tools}] Figma, Mockplus
+      \item[\textbf{Developer Tools}] VS Code, Git, Linux
+      \item[\textbf{Other Technologies}] Arduino, Flutter
     \end{itemize}
+  \end{multicols}
 
+  %------------%
+  % Professional Experience %
+  %------------%
+
+  \section{Professional Experience}
+
+  \headingBf{Web Designer Intern}{Shivam Securities Private Limited, \textit{May 2023 -- August 2024}}
+  \begin{resume_list}
+    \item Designed and developed a responsive website featuring refund details, and investment resources.
+    \item Integrated a secure payment gateway for smooth transaction functionality.
+    \item Optimized user experience through seamless navigation and backend integration.
+  \end{resume_list}
+
+  \headingBf{Frontend Developer Intern}{Cosmos Next Gen Tech Private Limited, \textit{October 2021 -- March 2022}}
+  \begin{resume_list}
+    \item Assisted in creating responsive web pages using HTML, CSS, and JavaScript.
+    \item Designed prototypes in Figma, contributing to visually appealing and user-friendly interfaces.
+    \item Collaborated with senior developers to implement best practices in frontend development.
+  \end{resume_list}
 
   %------------%
   % Projects %
   %------------%
 
   \section{Projects}
+
     \headingBf {\underline{\href{https://shivamsecurities.com/}{Investment Services \(\nearrow\)}}}{September 2023}
     \begin{resume_list}
-    \item Designed and developed a fully functional, responsive website independently, incorporating modern UI/UX principles.
-    \item Integrated essential features, including policy pages, refund details, and a secure payment gateway.
-    \item Ensured seamless navigation and user experience through HTML, CSS, JavaScript, and backend integration.
+    \item Independently designed and developed a fully responsive website using React.js.
+    \item Incorporated features like policy pages, secure payment gateways, and refund systems.
+    \item Ensured seamless navigation through HTML, CSS, JavaScript, and backend integration.
     \end{resume_list} 
     
     \headingBf {\underline{\href{https://github.com/surajkr97/MemoryGame/tree/master/matchthecards}{Memory Game \(\nearrow\)}}}{May 2023}
     \begin{resume_list}
-    \item Built an interactive memory game using React, with a card-matching mechanism and a 21-flip challenge.
-    \item Designed and implemented game logic, flipping animations, and a responsive interface for an engaging user experience.
-    \item Leveraged React's component-based architecture for efficient state management and dynamic UI updates.
+    \item Built an interactive memory card game using React.js, implementing a 21-flip challenge.
+    \item Designed game logic, animations, and a responsive interface for enhanced engagement.
     \end{resume_list}
     
     \headingBf {\underline{\href{https://github.com/surajkr97/Expense-Tracker-App}{Expense Tracker App \(\nearrow\)}}}{March 2023}
     \begin{resume_list}
-    \item Developed an expense tracker app using Flutter and Dart, allowing users to track and manage their daily expenses.
-    \item Designed a user-friendly interface with features for adding, editing, and categorizing expenses.
-    \item Implemented data storage solutions to save and retrieve expense data, ensuring smooth performance and easy tracking.
+    \item Developed a mobile expense tracker using Flutter and Dart for daily expense management.
+    \item Implemented data storage solutions to save and retrieve categorized expense data efficiently.
   \end{resume_list}
 
     \headingBf {\underline{\href{https://surajkr97.hashnode.dev/exploring-the-world-of-iot-from-robo-cars-to-robo-warrior?source=more_articles_bottom_blogs}{Hand Gesture Controlled Robot Car \(\nearrow\)}}}{July 2022}
     \begin{resume_list}
-    \item Developed an IoT-based hand gesture-controlled robot car using Arduino and a gyroscope sensor for motion detection.
-    \item Integrated Bluetooth technology to transmit hand gesture data to the robot car, enabling movement based on gestures (forward, backward, left, right).
-    \item Designed a wearable system (bracelet) with a gyroscope sensor to capture and send data for precise control of the robot car.
-  \end{resume_list}
-
-  %------------%
-  % Internship and Training %
-  %------------%
-
-  \section{Internship and Training}
-
-  \headingBf{
-Web Designer at Shivam Securities Private Limited, Dehradun}{May 2023 -- August 2024}
-  \begin{resume_list}
-    \item \textbf{Developed Shivam Securities Website:} Designed and built a responsive website, including policy pages, refund details, and investment resources.
-    \item \textbf{Integrated Payment Gateway:} Successfully added a secure payment gateway independently.
-    \item \textbf{Optimized User Experience:} Ensured smooth functionality and user-friendly navigation.
-    \item \textbf{Full-Stack Development:} Handled both backend and frontend tasks to align with business goals.
-  \end{resume_list}
-
-  \headingBf{Frontend Developer at Cosmos Next Gen Tech Private Limited, Bangalore}{October 2021 -- March 2022}
-  \begin{resume_list}
-    \item \textbf{Basic Styling and Layouts:} Assisted in creating responsive web pages using HTML, CSS, and JavaScript.
-    \item \textbf{UI Design with Figma:} Contributed to designing user interfaces and prototypes in Figma to improve visual appeal and usability.
-    \item \textbf{Collaborated with Senior Developers:} Worked closely with experienced team members to learn and implement best practices in frontend development.
+    \item Built an IoT-based robot using Arduino and gyroscopes for motion detection and control.
+    \item Designed a wearable system to capture and transmit precise hand gesture movements.
   \end{resume_list}
 
   %-----------%
@@ -256,35 +249,19 @@ Web Designer at Shivam Securities Private Limited, Dehradun}{May 2023 -- August 
 
   \section{Education}
 
-  \headingBf{Uttrakhand Technical University}{August 2020 — May 2024} % Note: Adding year(s) exposes an implied age
-  \headingIt{Computer Science and Engineering}{Sudhowala, Dehradun}
-
- % \vspace{5pt}
- %  \headingBf{Higher Secondary Education}{June 2020 — March 2024} % Note: Adding year(s) exposes an implied age
- %  \headingIt{M.R.R.G. College, Bettiah}{}
+  \headingBf{Uttarakhand Technical University}{August 2020 -- May 2024}
+  \headingIt{B.Tech in Computer Science and Engineering}{Sudhowala, Dehradun}
 
   %----------------------------%
-  % Extracurricular Activities %
+  % Achievements %
   %----------------------------%
 
   \section{Achievements}
 
-  % \headingBf{Hospital / Health Science IRB}{Mar 2015 -- Present}
-  % \begin{resume_list}
-  %   \item Served as non-scientific/unaffiliated patient-representative
-  %   \item Reviewed patient consent forms for completeness, accuracy, and clarity
-  %   \item Became familiar with industry standards and regulations (OHRP, HIPAA)
-  % \end{resume_list}
-
-  % \headingBf{Debian Linux}{Jan 2001 -- Present}
   \begin{resume_list}
   \vspace{5pt}
-    \item First runner-up in \textbf{Incubate india hackathon 2021 powered by Git Hub} held in Tula's Institute where we built a online virus
-tracker named as ScanIT
-  \vspace{5pt}
-    \item First runner-up in \textbf{Inter college Tech Talent Hackathon 2023} which held in Haryana where we developed a
-memory game
-    % \item Resolved bugs reported in bug tracking system
+    \item First Runner-Up: \textbf{Incubate India Hackathon 2021} - Built an online virus tracker, ScanIT.
+    \item First Runner-Up: \textbf{Inter College Tech Talent Hackathon 2023} - Developed an interactive memory game.
   \end{resume_list}
 
 \end{document}
